@@ -30,6 +30,7 @@ const ShowData = () => {
             <th>Mobile</th>
             <th>Email</th>
             <th>City</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
