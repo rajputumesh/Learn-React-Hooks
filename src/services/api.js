@@ -1,11 +1,13 @@
+import { BASE_URL } from "../utils/config";
+
 const apiService = {};
 
 apiService.getUsers = () => {
-  return fetch("https://jsonplaceholder.typicode.com/users");
+  return fetch(`${BASE_URL}/users`);
 };
 
 apiService.getUsers = (user_id) => {
-  return fetch(`https://jsonplaceholder.typicode.com/users/${user_id}`);
+  return fetch(`${BASE_URL}/${user_id}`);
 };
 
 export default apiService;

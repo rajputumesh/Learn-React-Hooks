@@ -10,7 +10,7 @@ const Home = () => {
 
   const getData = async () => {
     try {
-      const res = await apiService.getUsers();
+      const res = await fetch("https://jsonplaceholder.typicode.com/users");
       const resData = await res.json();
       setData(resData);
     } catch (error) {
