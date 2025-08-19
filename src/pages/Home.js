@@ -9,26 +9,19 @@ const Home = () => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
-    try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const resData = await res.json();
-      setData(resData);
-    } catch (error) {
-      console.log("error users api ", error);
-    }
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const jsonData = await res.json();
+    setData(jsonData);
   };
-
-  console.log("data == ", data);
-
   useEffect(() => {
     getData();
   }, []);
 
+  console.log("data", data);
+
   return (
     <Layout>
-      <BodyContext.Provider value={{ data }}>
-        <DataList />
-      </BodyContext.Provider>
+      <input onKeyUp={(e) => setData(e.target.value)} />
     </Layout>
   );
 };

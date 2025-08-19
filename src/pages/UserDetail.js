@@ -7,9 +7,7 @@ const UserDetail = () => {
   const [data, getData] = useState({});
 
   const getDetail = async () => {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${user_id}`
-    );
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${user_id}`);
     const resData = await res.json();
     console.log(resData);
     getData(resData);

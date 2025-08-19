@@ -3,9 +3,11 @@ import Layout from "../components/Layout";
 import { TbEdit, TbEye, TbRowRemove } from "react-icons/tb";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate();
 
   const getPosts = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -78,6 +80,7 @@ const About = () => {
                       color: "white",
                       padding: "2px 3px",
                     }}
+                    onClick={() => navigate(`../post/${item.id}`)}
                   >
                     <TbEye style={{ fontSize: "25px" }} />
                   </button>
